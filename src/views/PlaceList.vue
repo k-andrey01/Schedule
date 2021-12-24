@@ -22,6 +22,15 @@
 			</a>
 		</div>
 
+		<div class="container">
+			<label class="btn btn-lg btn-block btn-default">Выберите город для фильтрации, если хотите отфильтровать данные</label>
+			<select class="btn btn-lg btn-block btn-default" v-model="cityId">
+				<option v-for="(city, key) in cities" :value="key">{{ city }}</option>
+			</select>
+			<button class="btn-info" v-on:click="filtering(cityId)">Фильтровать</button>
+			<button class="btn-danger" v-on:click="$router.push('placeLoader')">Очистить</button>
+		</div>
+
 		<table class="table table-striped">
 			<thead>
 			<tr>
@@ -33,6 +42,7 @@
 			</tr>
 			</thead>
 			<tbody>
+
 			<tr v-for="item in place" :key=item.id>
 				<td>{{item.id}}</td>
 				<td>{{ item.city.name }}</td>
@@ -62,11 +72,16 @@ export default {
 		async handleRemoveClick(e, id) {
 			await this.removePlace(id);
 		},
+		filtering(id){
+			this.$store.dispatch('initializePlaceFilt', parseInt(id));
+			this.$router.push({name:'place'})
+		},
 		...mapActions([
 			'removePlace'
 		])
 	},
 	computed: {
+		cities: () => cities,
 		...mapState({
 			place: state => state.place
 		})

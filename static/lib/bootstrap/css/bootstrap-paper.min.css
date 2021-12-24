@@ -3235,7 +3235,7 @@ fieldset[disabled] .btn-success.focus {
 }
 .btn-info {
   color: #ffffff;
-  background-color: #9c27b0;
+  background-color: #B0C4DE;
   border-color: transparent;
 }
 .btn-info:focus,
@@ -3349,7 +3349,7 @@ fieldset[disabled] .btn-warning.focus {
 }
 .btn-danger {
   color: #ffffff;
-  background-color: #e51c23;
+  background-color: #6495ED;
   border-color: transparent;
 }
 .btn-danger:focus,

@@ -258,7 +258,7 @@ export default new Vuex.Store({
 			}
 		},
 
-		async initializePlaceFilt(context) {
+		async initializePlaceFilt(context, cityId) {
 			try {
 				const response = await PlaceApi.place.getByFiltering(cityId);
 				context.commit('SET_PLACE', response.data );

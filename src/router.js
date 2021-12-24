@@ -19,7 +19,6 @@ import TypeEdit from "./views/TypeEdit";
 import PlaceEdit from "./views/PlaceEdit";
 import PerformanceEdit from "./views/PerformanceEdit";
 import ScheduleEdit from "./views/ScheduleEdit";
-import PlaceFiltLoader from "./views/PlaceFiltLoader";
 
 Vue.use(VueRouter);
 export default new VueRouter({
@@ -42,7 +41,6 @@ export default new VueRouter({
 		{path: "/placeLoader", name:"placeLoader",component:PlaceLoader},
 		{path: "/place", name: "place", component: PlaceList},
 		{path:"/place/:id", name:"editPlace",component:PlaceEdit},
-		{path: "/placeFiltLoader",name:"placeFiltLoader", component: PlaceFiltLoader},
 		{path: "/performanceLoader", name:"performanceLoader",component:PerformanceLoader},
 		{path:"/performance", name: "performance", component: PerformanceList},
 		{path: "/performance/:id", name: "editPerformance", component: PerformanceEdit}
